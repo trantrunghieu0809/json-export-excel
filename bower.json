@@ -1,0 +1,11 @@
+{
+  "name": "json-export-excel",
+  "version": "1.0.0",
+  "main": "src/json-export-excel.js",
+  "dependencies": {
+    "angular": ">=1.0.4",
+    "file-saver": "*"
+  },
+  "devDependencies": {
+  }
+}

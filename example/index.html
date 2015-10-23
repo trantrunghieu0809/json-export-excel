@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Demo Export Excel For Json</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/file-saver/FileSaver.min.js"></script>
+    <script src="../dest/json-export-excel.min.js"></script>
+</head>
+<body ng-app="example" ng-controller="exampleController" style="margin-top: 30px">
+    <button ng-json-export-excel data="dataList" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head',  'publisher.name': 'Publisher Head'}" >Json Export</button>
+    <pre style="margin-top: 10px">
+        &lt;button ng-json-export-excel data="dataList" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head'}"&gt;&lt;/button&gt;
+    </pre>
+    <hr>
+
+    <button ng-json-export-excel data="dataList" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head'}" filename="'filename'" class="btn-sm btn-primary">Export Excel</button>
+    <pre style="margin-top: 10px">
+        &lt;div ng-json-export-excel data="dataList" report-fields="{id: 'ID Heder', name: 'Name Header', price: 'Price Head'}" filename="filename"&gt;&lt;/div&gt;
+    </pre>
+    <hr>
+
+    <script>
+        angular.module('example', ["ngJsonExportExcel"])
+            .controller('exampleController', function ($scope) {
+                $scope.dataList = [
+                    {
+                        id: 1,
+                        name: 'github',
+                        price: '200$',
+                        publisher: {
+                            name: 'dtagdev'
+                        }
+                    },
+                    {
+                        id: 2,
+                        name: 'google',
+                        price: '300$',
+                        publisher: {
+                            name: 'dtagvn'
+                        }
+                    }
+                ]
+            });
+    </script>
+</body>
+</html>
