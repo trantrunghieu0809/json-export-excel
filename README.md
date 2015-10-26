@@ -25,4 +25,4 @@ bower install ng-json-export-excel --save
   Default `filename = 'export-excel'`
 
 
-4. Please find examples in the directory `example`
+4. Please find examples in the directory `example` or You can check out this live example here: http://plnkr.co/6ieuJ1khmKFds9VYHoDv
