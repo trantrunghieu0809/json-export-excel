@@ -8,13 +8,15 @@
                 scope: {
                     data : '=',
                     filename: '=?',
-                    reportFields: '='
+                    reportFields: '=',
+                    separator: '@'
                 },
                 link: function (scope, element) {
                     scope.filename = !!scope.filename ? scope.filename : 'export-excel';
 
                     var fields = [];
                     var header = [];
+                    var separator = scope.separator || ';';
 
                     angular.forEach(scope.reportFields, function(field, key) {
                         if(!field || !key) {
@@ -67,14 +69,14 @@
                                 rowItems.push(fieldValue);
                             });
 
-                            body += rowItems.toString() + '\n';
+                            body += rowItems.join(separator) + '\n';
                         });
 
                         return body;
                     }
 
                     function _convertToExcel(body) {
-                        return header + '\n' + body;
+                        return header.join(separator) + '\n' + body;
                     }
 
                     function _objectToString(object) {
