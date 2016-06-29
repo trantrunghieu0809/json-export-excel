@@ -1,6 +1,6 @@
 {
   "name": "json-export-excel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/json-export-excel.js",
   "dependencies": {
     "angular": ">=1.0.4",
