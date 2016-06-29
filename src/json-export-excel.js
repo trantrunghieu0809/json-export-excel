@@ -66,7 +66,11 @@
                                     fieldValue = _objectToString(fieldValue);
                                 }
 
-                                rowItems.push(fieldValue);
+                                if(typeof fieldValue == 'string') {
+                                    rowItems.push('"' + fieldValue.replace(/"/g, '""') + '"');
+                                } else {
+                                    rowItems.push(fieldValue);
+                                }
                             });
 
                             body += rowItems.join(separator) + '\n';
