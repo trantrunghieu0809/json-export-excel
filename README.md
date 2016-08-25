@@ -23,6 +23,7 @@ bower install ng-json-export-excel --save
   <button ng-json-export-excel data="dataList" report-fields="{'uesr.username': 'Heder 1', keyjson2: 'Header 2', keyjson3: 'Head 3'}" filename =" 'export-excel' " separator="," class="css-class"></button>
   ```
   Default `filename = 'export-excel'`
+  
   Default `separator = ';'`
 
 
